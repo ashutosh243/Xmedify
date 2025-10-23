@@ -4,7 +4,7 @@ import Header from './component/Header';
 import Hero from './component/Hero';
 import Specialisation from './component/Specialisation';
 import Specialist from './component/Specialist';
-import Carousel  from './component/carousel';
+import Carousel  from './component/Carousel';
 import Patient from './component/Patient';
 import Blog from './component/Blog';
 import News from './component/News';
