@@ -2,6 +2,7 @@ import { Axis3DIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import HospitalCard from '../component/HospitalCard.';
+import { useNavigate } from 'react-router';
 
 const Search = () => {
 
@@ -31,6 +32,7 @@ const Search = () => {
 
         const response = await axios.get(`https://meddata-backend.onrender.com/data?state=${selectedData.state}&city=${selectedData.city}`);
         setData(() => { return response.data });
+        useNavigate('/find-docter');
     }
     return (<>
         <div className="relative w-full h-[20vh] flex justify-center">

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router';
-import { useNavigate } from 'react-router';
 
 const Navbar = () => {
 
@@ -11,8 +10,8 @@ const Navbar = () => {
           <p>Medify</p>
         </div>
         <ul className='flex gap-10'>
-          <Link to='/find-docter'> <li >Find Doctors</li></Link>
-          <Link><li>Hospitals</li></Link>
+          <Link > <li >Find Doctors</li></Link>
+          <Link to='/find-docter'><li>Hospitals</li></Link>
           <Link><li>Medicines</li></Link>
           <Link><li>Surgeries</li></Link>
           <Link> <li>Software for Provider</li></Link>
