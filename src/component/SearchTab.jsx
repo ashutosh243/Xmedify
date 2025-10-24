@@ -39,19 +39,19 @@ const SearchTab = () => {
             <div className='flex gap-6 items-center justify-center p-5 absolute top-[10px]  w-[40vw] left-[15vw]'>
                 <div id='state'>
                     <select name='state' className=" w-[15vw] h-[3vw] border rounded-md px-2" id="state" onChange={handleChange}>
-                        <option value="">State</option>
+                        <option value=""><li>State</li></option>
                         {
-                            state?.map((data) => { return <option value={data}>{data}</option> })
+                            state?.map((data) => { return <option value={data}><li>{data}</li></option> })
                         }
                     </select>
                 </div>
                 <div id='city'>
                     <select name='city' className="w-[15vw] h-[3vw] border rounded-md px-2" id="city" onChange={handleChange}>
-                        <option value="">City</option>
-                        {city?.map((data) => { return <option value={data}>{data}</option> })}
+                        <option value=""><li>City</li></option>
+                        {city?.map((data) => { return <option value={data}><li>{data}</li></option> })}
                     </select>
                 </div>
-                <button id="    searchBtn" type="submit" className="bg-[#2AA7FF] text-white px-6 py-2 rounded-md hover:bg-blue-500" onClick={handleClick}>
+                <button id="searchBtn" type="submit" className="bg-[#2AA7FF] text-white px-6 py-2 rounded-md hover:bg-blue-500" onClick={handleClick}>
                     Search
                 </button>
             </div>
