@@ -8,8 +8,7 @@ const Search = () => {
     const [selectedData, setSelectedData] = useState({ state: "", city: "" });
     const [state, setState] = useState([]);
     const [city, setCity] = useState([]);
-    const [data,setData]=useState();
-
+    const [data, setData] = useState();
 
     useEffect(() => {
         async function findState() {
@@ -28,10 +27,10 @@ const Search = () => {
     const handleChange = (e) => {
         setSelectedData((prev) => { return { ...prev, [e.target.name]: e.target.value } })
     }
-    const handleClick= async ()=>{
-          
-        const response=await axios.get(`https://meddata-backend.onrender.com/data?state=${selectedData.state}&city=${selectedData.city}`);
-        setData(()=>{return response.data});
+    const handleClick = async () => {
+
+        const response = await axios.get(`https://meddata-backend.onrender.com/data?state=${selectedData.state}&city=${selectedData.city}`);
+        setData(() => { return response.data });
     }
     return (<>
         <div className="relative w-full h-[20vh] flex justify-center">
@@ -41,7 +40,7 @@ const Search = () => {
                     <select name='state' className=" w-[15vw] h-[3vw] border rounded-md px-2" id="state" onChange={handleChange}>
                         <option value="">State</option>
                         {
-                            state?.map((data) => { return   <option value={data}>{data}</option> })
+                            state?.map((data) => { return <option value={data}>{data}</option> })
                         }
                     </select>
                 </div>
@@ -58,7 +57,7 @@ const Search = () => {
         </div>
         <div className="container flex items-center justify-center flex-col mt-10">
             <h1 className='text-2xl '>{data?.length} medical centers available in {selectedData.city}</h1>
-            {data?.map((data)=>{return <HospitalCard name={data["Hospital Name"]} address={data["Address"]} type={data["Hospital Type"]}></HospitalCard>})}
+            {data?.map((data) => { return <HospitalCard name={data["Hospital Name"]} address={data["Address"]} type={data["Hospital Type"]}></HospitalCard> })}
         </div>
     </>);
 };
