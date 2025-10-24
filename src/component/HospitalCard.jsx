@@ -46,7 +46,7 @@ const HospitalCard = ({name,address,type}) => {
 
             {open && (
                 <div className="border-t border-gray-200 px-6 py-4 bg-gray-50 transition-all duration-300 ease-in-out">
-                    {/* Tabs */}
+                    
                     <div className="flex justify-between items-center mb-4">
                         <button className="text-blue-600 font-semibold flex items-center gap-1">
                             <CalendarDays size={16} />  Today <span className="text-gray-500">(11 Slots)</span>
@@ -80,7 +80,7 @@ const HospitalCard = ({name,address,type}) => {
                             ))}
                         </div>
 
-                        <p className="font-semibold text-gray-700 mb-2">Evening</p>
+                           <p className="font-semibold text-gray-700 mb-2">Evening</p>
                         <div className="flex flex-wrap gap-2">
                             {timeSlots.evening.map((slot, i) => (
                                 <button
