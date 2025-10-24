@@ -2,14 +2,14 @@ import React from 'react'
 import { Hospital, Pill, Ambulance, TestTubes, ClipboardPlus } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import HospitalCard from './HospitalCard.';
+import HospitalCard from './HospitalCard';
 
 
 const SearchTab = () => {
 
     const [selectedData, setSelectedData] = useState({ state: "", city: "" });
     const [isOpen, setIsOpen] = useState({ state: false, city: false });
-    const [state, setState] = useState([]);
+    const [states, setState] = useState([]);
     const [city, setCity] = useState([]);
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -20,6 +20,7 @@ const SearchTab = () => {
         findState();
     }, []);
     useEffect(() => {
+        if(!selectedData.state)return;
         async function getCity() {
             const response = await axios.get(`https://meddata-backend.onrender.com/cities/${selectedData.state}`);
             setCity(() => { return response.data });
@@ -40,7 +41,6 @@ const SearchTab = () => {
         const response = await axios.get(`https://meddata-backend.onrender.com/data?state=${selectedData.state}&city=${selectedData.city}`);
         setData(() => { return response.data });
     }
-    console.log(data);
     return (<>
         <div className='w-[70vw] bg-white  shadow-lg min-h-[300px] relative top-[-200px] left-[15vw] rounded-xl'>
             <div className='flex gap-6 items-center justify-center p-5 absolute top-[10px]  w-[40vw] left-[15vw]'>
@@ -56,7 +56,7 @@ const SearchTab = () => {
                         </button>
                         {isOpen.state && (
                             <ul className="absolute w-full bg-white border rounded-md mt-1 shadow-md z-10">
-                                {state.map((st) => (
+                                {states.map((st) => (
                                     <li
                                         key={st}
                                         onClick={() => handleStateSelect(st)}
@@ -134,7 +134,7 @@ const SearchTab = () => {
             {data?.length !== 0 && <div className="container flex items-center justify-center flex-col">
                 <div className='mt-20 p-5'>
                     <h1 className='text-2xl '>{data?.length} medical centers available in {selectedData.city}</h1>
-                    {data?.map((data) => { return <HospitalCard name={data["Hospital Name"]} address={data["Address"]} type={data["Hospital Type"]}></HospitalCard> })}
+                    {data?.map((data,index) => { return <HospitalCard key={index} name={data["Hospital Name"]} address={data["Address"]} type={data["Hospital Type"]}></HospitalCard> })}
                 </div>
             </div>}
         </div>
