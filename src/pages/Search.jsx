@@ -58,7 +58,7 @@ const Search = () => {
             </div>
         </div>
         <div className="container flex items-center justify-center flex-col mt-10">
-            <h1 className='text-5xl font-bold  lowercase'>{data?.length} medical centers available in {selectedData.city.toLowerCase()}</h1>
+            <h1 className='text-2xl font-bold'>{data?.length} medical centers available in {selectedData.city}</h1>
             {data?.map((data) => { return <HospitalCard name={data["Hospital Name"]} address={data["Address"]} type={data["Hospital Type"]}></HospitalCard> })}
         </div>
     </>);
