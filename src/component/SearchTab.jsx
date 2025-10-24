@@ -44,8 +44,8 @@ const SearchTab = () => {
     return (<>
         <div className='w-[70vw] bg-white  shadow-lg min-h-[300px] relative top-[-200px] left-[15vw] rounded-xl'>
             <div className='flex gap-6 items-center justify-center p-5 absolute top-[10px]  w-[40vw] left-[15vw]'>
-                    <div id='state'className="relative w-[15vw]">
-                        <button
+                    <div className="relative w-[15vw]">
+                        <button id='state'
                             onClick={() =>
                                 setIsOpen({ ...isOpen, state: !isOpen.state, city: false })
                             }
@@ -69,7 +69,7 @@ const SearchTab = () => {
                         )}
                     </div>
                     <div id='city' className="relative w-[15vw]">
-                        <button
+                        <button id='city'
                             disabled={!selectedData.state}
                             onClick={() =>
                                 setIsOpen({ ...isOpen, city: !isOpen.city, state: false })
