@@ -1,7 +1,7 @@
 import { Axis3DIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import HospitalCard from '../component/HospitalCard.';
+import HospitalCard from '../component/HospitalCard';
 import { useNavigate } from 'react-router';
 
 const Search = () => {
