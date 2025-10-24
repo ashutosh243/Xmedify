@@ -11,7 +11,7 @@ import docter2 from '../assets/docter2.png';
 const Specialist = () => {
     return (<>
         <div className="container w-[80vw] m-auto h-[600px] ">
-            <h1 className='font-bold text-2xl text-center m-10'>Our Medical Specialist</h1>
+            <h2 className='font-bold text-2xl text-center m-10'>Our Medical Specialist</h2>
 
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}

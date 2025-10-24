@@ -6,7 +6,7 @@ const Blog=()=>{
   
   return (<div className='containe w-[80vw] m-auto'>
           
-          <h1 className='font-bold text-3xl text-center mt-5 text-[#025590]'>Read Our Latest News</h1>
+          <h2 className='font-bold text-3xl text-center mt-5 text-[#025590]'>Read Our Latest News</h2>
           <div className='flex '>
              <Card link={CardImage}></Card>
              <Card link={CardImage}></Card>

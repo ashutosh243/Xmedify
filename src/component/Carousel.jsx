@@ -13,7 +13,7 @@ import carousel3 from '../assets/carousel3.png';
 const Carousel = () => {
     return (<>
         <div className="container w-[80vw] m-auto h-[400px] mb-10 ">
-            <h1 className='font-bold text-2xl text-center m-5'>Our Medical Specialist</h1>
+            <h2 className='font-bold text-2xl text-center m-5'>Our Medical Specialist</h2>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}

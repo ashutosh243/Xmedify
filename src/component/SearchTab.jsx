@@ -101,7 +101,7 @@ const SearchTab = () => {
             </div>
             {data?.length === 0 && <div className='w-[60vw] absolute top-[120px] left-[5vw] flex flex-col gap-5'>
                 <div className='text-center text-xl '>
-                    <h1>you may be looking for</h1>
+                    <h2>you may be looking for</h2>
                 </div>
                 <div className='flex gap-10 h-[110px] items-center justify-center'>
                     <div className=' w-[90px] h-[90px]  bg-slate-100 text-center flex flex-col items-center justify-center shadow-md
@@ -133,7 +133,7 @@ const SearchTab = () => {
             </div>}
             {data?.length !== 0 && <div className="container flex items-center justify-center flex-col">
                 <div className='mt-20 p-5'>
-                    <h1 className='text-2xl '>{data?.length} medical centers available in {selectedData.city}</h1>
+                    <h2 className='text-2xl '>{data?.length} medical centers available in {selectedData.city}</h2>
                     {data?.map((data,index) => { return <HospitalCard key={index} name={data["Hospital Name"]} address={data["Address"]} type={data["Hospital Type"]}></HospitalCard> })}
                 </div>
             </div>}

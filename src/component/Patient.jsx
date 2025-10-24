@@ -12,7 +12,7 @@ const Patient=()=>{
         </div>
         <div className='w-[38vw] flex flex-col items-start justify-center'>
             <p className='uppercase text-[#0057ec] font-bold '>helping patients around the globe</p>
-            <h1 className=' text-[#0057ec] text-3xl font-bold'><span className="text-slate-900">Patient</span> Caring</h1>
+            <h2 className=' text-[#0057ec] text-3xl font-bold'><span className="text-slate-900">Patient</span> Caring</h2>
             <p className='text-slate-600 mt-2'>our goal is to deliver quality of care in a courteous, respectful, and compassionate manner. We hope you will
               allow us to care for you and strive to be the first and best choice for healthcare
             </p>    

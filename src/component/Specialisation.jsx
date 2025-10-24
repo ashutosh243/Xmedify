@@ -5,7 +5,7 @@ const Specialisation = () => {
 
     return (<>
         <div className='bg-[#e7f0ff] flex flex-col  items-center justify-center'>
-            <h1 className='font-bold text-3xl m-5 text-[#2AA7FF]'>Find By Specialisation</h1>
+            <h2 className='font-bold text-3xl m-5 text-[#2AA7FF]'>Find By Specialisation</h2>
             <div className='container grid grid-cols-4 gap-5  w-[80vw]'>
                 <div className=" h-[150px] bg-white text-center flex flex-col items-center justify-center shadow-md
                     border-2 hover:border-blue-500 hover:cursor-pointer">
