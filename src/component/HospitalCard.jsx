@@ -49,7 +49,7 @@ const HospitalCard = ({name,address,type}) => {
                     
                     <div className="flex justify-between items-center mb-4">
                         <button className="text-blue-600 font-semibold flex items-center gap-1">
-                            <CalendarDays size={16} />  Today <span className="text-gray-500">(11 Slots)</span>
+                            <CalendarDays size={16} />  Today <p className="text-gray-500">(11 Slots)</p>
                         </button>
                         <button className="text-gray-600 hover:text-blue-600">Tomorrow</button>
                         <button className="text-gray-600 hover:text-blue-600">Fri, 5 May</button>
