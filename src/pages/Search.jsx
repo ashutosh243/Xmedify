@@ -29,7 +29,6 @@ const Search = () => {
         setSelectedData((prev) => { return { ...prev, [e.target.name]: e.target.value } })
     }
     const handleClick = async () => {
-
         const response = await axios.get(`https://meddata-backend.onrender.com/data?state=${selectedData.state}&city=${selectedData.city}`);
         setData(() => { return response.data });
         useNavigate('/find-docter');

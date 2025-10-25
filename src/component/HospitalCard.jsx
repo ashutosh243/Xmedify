@@ -1,14 +1,41 @@
 import React, { useState } from "react";
 import { MapPin, Hospital, CalendarDays, Clock } from "lucide-react";
 
-const HospitalCard = ({name,address,type}) => {
+const HospitalCard = ({ name, address, type }) => {
     const [open, setOpen] = useState(false);
+    const [BookingData,setBookingData]=useState();
+
 
     const timeSlots = {
         morning: ["11:30 AM"],
         afternoon: ["12:00 PM", "12:30 PM", "01:30 PM", "02:00 PM", "02:30 PM"],
         evening: ["06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"],
     };
+    const handleClick=(slot,name,address,type)=>{
+        
+        const BookingData={
+            name:name,
+            address:address,
+            slot:slot,
+            type:type,
+            time:new Date().toLocaleDateString(),
+            date:new Date().toLocaleTimeString()
+        };
+        setBookingData(BookingData);
+    }
+    const handleBooking=()=>{
+        
+        const localData=JSON.parse(localStorage.getItem('bookings'));
+        if(localData)
+        {
+            localData.push(BookingData)
+            localStorage.setItem('bookings',JSON.stringify(localData));
+        }
+        else
+        {
+          localStorage.setItem('bookings',JSON.stringify([BookingData]));
+        }
+    }
 
     return (
         <div className="w-[90%] max-w-3xl mx-auto mt-6 bg-white shadow-lg rounded-xl border border-gray-200">
@@ -46,20 +73,19 @@ const HospitalCard = ({name,address,type}) => {
 
             {open && (
                 <div className="border-t border-gray-200 px-6 py-4 bg-gray-50 transition-all duration-300 ease-in-out">
-                    
                     <div className="flex justify-between items-center mb-4">
                         <button className="text-blue-600 font-semibold flex items-center gap-1">
-                            <CalendarDays size={16} /><p className="text-gray-500">  Today </p>
+                            <CalendarDays size={16} /><p className="text-gray-500">Today </p>
                         </button>
                         <button className="text-gray-600 hover:text-blue-600">Tomorrow</button>
                         <button className="text-gray-600 hover:text-blue-600">Fri, 5 May</button>
                     </div>
-
                     <div>
                         <p className="font-semibold text-gray-700 mb-2">Morning</p>
                         <div className="flex flex-wrap gap-2 mb-4">
                             {timeSlots.morning.map((slot, i) => (
                                 <button
+                                    onClick={()=>{handleClick(slot,name,address,type)}}
                                     key={i}
                                     className="px-3 py-1 border border-blue-500 text-blue-500 rounded-md hover:bg-blue-50 text-sm"
                                 >
@@ -72,6 +98,7 @@ const HospitalCard = ({name,address,type}) => {
                         <div className="flex flex-wrap gap-2 mb-4">
                             {timeSlots.afternoon.map((slot, i) => (
                                 <button
+                                    onClick={()=>{handleClick(slot,name,address,type)}}
                                     key={i}
                                     className="px-3 py-1 border border-blue-500 text-blue-500 rounded-md hover:bg-blue-50 text-sm"
                                 >
@@ -80,10 +107,11 @@ const HospitalCard = ({name,address,type}) => {
                             ))}
                         </div>
 
-                           <p className="font-semibold text-gray-700 mb-2">Evening</p>
+                        <p className="font-semibold text-gray-700 mb-2">Evening</p>
                         <div className="flex flex-wrap gap-2">
                             {timeSlots.evening.map((slot, i) => (
                                 <button
+                                    onClick={()=>{handleClick(slot,name,address,type)}}
                                     key={i}
                                     className="px-3 py-1 border border-blue-500 text-blue-500 rounded-md hover:bg-blue-50 text-sm"
                                 >
@@ -94,6 +122,8 @@ const HospitalCard = ({name,address,type}) => {
                     </div>
                 </div>
             )}
+
+            <button onClick={handleBooking}className="p-4">book slot</button>
         </div>
     );
 };

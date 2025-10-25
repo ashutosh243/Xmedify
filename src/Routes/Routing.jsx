@@ -6,14 +6,12 @@ import MyBookings from '../pages/MyBookings';
 
 
 const Routing=()=> {
-
   return (<>
      <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/find-docter' element={<Search></Search>}></Route>
         <Route path='/my-bookings' element={<MyBookings/>}></Route>
      </Routes>
-    
   </>)
 }
 
