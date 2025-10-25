@@ -133,7 +133,7 @@ const SearchTab = () => {
             </div>}
             {data?.length !== 0 && <div className="container flex items-center justify-center flex-col">
                 <div className='mt-20 p-5'>
-                    <h1 className='text-2xl '>{data?.length} medical centers available in {selectedData.city}</h1>
+                    <h1 className='text-2xl '>{data?.length} medical centers available in {selectedData.city.toLocaleLowerCase()}</h1>
                     {data?.map((data,index) => { return <HospitalCard key={index} name={data["Hospital Name"]} address={data["Address"]} type={data["Hospital Type"]}></HospitalCard> })}
                 </div>
             </div>}
