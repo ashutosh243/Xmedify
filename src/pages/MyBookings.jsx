@@ -9,12 +9,14 @@ const MyBookings=()=> {
         <div className='w-[80vw] m-auto text-center flex flex-col items-center justify-center p-4 gap-5'>
          
               {
-                data?.map((d,index)=>{return <BookingCard key={index} name={d.name} location={d.address} time={d.time} date={d.date}></BookingCard>})
+                data?.map((d,index)=>{return <BookingCard key={index} name={d["Hospital Name"]} location={d["State"]} time={d.bookingTime} date={d.bookingDate}></BookingCard>})
               }
             
         </div>
   </>)
 }
 
-export default MyBookings
+export default MyBookings;
+
+
 

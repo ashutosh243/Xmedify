@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { MapPin, Hospital, CalendarDays, Clock } from "lucide-react";
 
+
+
+
 const HospitalCard = ({ name, address, type }) => {
     const [open, setOpen] = useState(false);
     const [BookingData,setBookingData]=useState();
@@ -14,12 +17,12 @@ const HospitalCard = ({ name, address, type }) => {
     const handleClick=(slot,name,address,type)=>{
         
         const BookingData={
-            name:name,
-            address:address,
-            slot:slot,
-            type:type,
-            time:new Date().toLocaleDateString(),
-            date:new Date().toLocaleTimeString()
+            "Hospital Name":name,
+            "State":address,
+            "slot":slot,
+            "Hospital Type":type,
+            bookingTime:new Date().toLocaleDateString(),
+            bookingDate:new Date().toLocaleTimeString()
         };
         setBookingData(BookingData);
     }
